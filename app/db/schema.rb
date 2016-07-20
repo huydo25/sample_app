@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD:sam/app/db/schema.rb
+ActiveRecord::Schema.define(version: 20160720020700) do
+=======
 ActiveRecord::Schema.define(version: 20160718084051) do
+>>>>>>> 13aa1d736105fad294248f18c0ec8c22f6a81a63:app/db/schema.rb
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +27,8 @@ ActiveRecord::Schema.define(version: 20160718084051) do
     t.string   "activation_digest"
     t.boolean  "activated",         default: false
     t.datetime "activated_at"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

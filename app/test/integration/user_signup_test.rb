@@ -1,10 +1,10 @@
 require 'test_helper'
 
-class UsersSignupTest < ActionDispatch::IntegrationTest
-
+class UsersSignupTest < ActionDispatch::IntegrationTest  
   def setup
     ActionMailer::Base.deliveries.clear
   end
+
 
   test "invalid signup information" do
     get signup_path
@@ -43,7 +43,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     get edit_account_activation_path(user.activation_token, email: user.email)
     assert user.reload.activated?
     follow_redirect!
-    assert_template 'users/show'
+     assert_template 'users/show'
     assert is_logged_in?
+
   end
 end
